@@ -1,0 +1,35 @@
+﻿@model UserSignInModel
+@{
+    ViewData["Title"] = "SignIn";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="SignIn" method="post" class="p-4 w-75 mx-auto shadow">
+    @* pading 4,witdh 75 alan,*@
+    <div class="mb-3">
+        <label>
+            Kullanıcı Adı:
+        </label>
+        <span class="text-danger" asp-validation-for="@Model.UserName"></span>
+        <input type="text" asp-for="@Model.UserName" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label>
+            Şifre:
+        </label>
+        <span class="text-danger" asp-validation-for="@Model.Password"></span>
+        <input type="password" asp-for="@Model.Password" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+
+    <div class="text-danger mt-2" asp-validation-summary="ModelOnly">
+    </div>
+</form>
+
+
+
+
+
+
